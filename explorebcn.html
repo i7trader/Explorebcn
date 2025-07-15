@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreBCN - Turismo Sostenible en Barcelona</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 104, 179, 0.8) 0%, rgba(0, 179, 159, 0.8) 100%);
+        }
+        .map-container {
+            height: 400px;
+            background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Barcelona,Spain&zoom=13&size=800x400&maptype=roadmap&markers=color:red%7C41.3851,2.1734&markers=color:blue%7C41.4024,2.1567&markers=color:blue%7C41.4084,2.1796&key=YOUR_API_KEY');
+            background-size: cover;
+            background-position: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .language-selector {
+            transition: all 0.3s ease;
+        }
+        .language-selector:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header with Language Selector -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">EB</div>
+                <h1 class="text-xl font-bold text-blue-600">Explore<span class="text-green-500">BCN</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#problem" class="text-gray-700 hover:text-blue-600 transition">El Problema</a>
+                <a href="#solution" class="text-gray-700 hover:text-blue-600 transition">Nuestra Solución</a>
+                <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Funcionalidades</a>
+                <a href="#impact" class="text-gray-700 hover:text-blue-600 transition">Impacto</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-2">
+                    <button class="language-selector px-2 py-1 rounded text-sm bg-gray-100 hover:bg-gray-200">ES</button>
+                    <button class="language-selector px-2 py-1 rounded text-sm bg-gray-100 hover:bg-gray-200">EN</button>
+                    <button class="language-selector px-2 py-1 rounded text-sm bg-gray-100 hover:bg-gray-200">CAT</button>
+                </div>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Barcelona Auténtica para Viajeros Inteligentes</h1>
+                <p class="text-xl mb-8">Descubre los rincones menos conocidos de Barcelona mientras contribuyes a un turismo más sostenible y respetuoso con la ciudad.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                        <i class="fab fa-apple mr-2"></i> Descargar en App Store
+                    </button>
+                    <button class="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-600 transition">
+                        <i class="fab fa-google-play mr-2"></i> Descargar en Google Play
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Barcelona alternative view" class="rounded-xl shadow-2xl w-full max-w-md">
+                    <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-lg shadow-lg">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-map-marked-alt text-blue-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">¿Qué problema resolvemos?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Barcelona enfrenta desafíos únicos debido a la saturación turística en ciertas áreas, afectando tanto a residentes como a la experiencia de los visitantes.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Saturación turística</h3>
+                    <p class="text-gray-600">Las Ramblas, la Sagrada Familia y el Park Güell reciben el 80% de los visitantes, causando congestión y deterioro.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pérdida de autenticidad</h3>
+                    <p class="text-gray-600">Los barrios tradicionales pierden su esencia al convertirse en zonas exclusivamente turísticas.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-leaf text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Turismo no sostenible</h3>
+                    <p class="text-gray-600">Falta de incentivos para prácticas turísticas responsables que beneficien a la comunidad local.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Crowded Barcelona street" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Comparación de zonas turísticas</h3>
+                    <p class="text-gray-600 mb-6">Mientras algunas áreas de Barcelona están abarrotadas de turistas, otras igualmente interesantes permanecen infrautilizadas, ofreciendo experiencias más auténticas.</p>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Las Ramblas</span>
+                                <span class="font-bold text-red-500">90% ocupación</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-red-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Gràcia</span>
+                                <span class="font-bold text-blue-500">30% ocupación</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Poble Sec</span>
+                                <span class="font-bold text-blue-500">25% ocupación</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Nuestra Solución: ExploreBCN</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Una aplicación que redirige el flujo turístico hacia experiencias auténticas mientras premia las prácticas sostenibles.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marked-alt text-blue-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Descubre Barcelona alternativa</h3>
+                        </div>
+                        <p class="text-gray-600 ml-14">Accede a un mapa interactivo con recomendaciones personalizadas de lugares menos conocidos pero igualmente fascinantes.</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-trophy text-green-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Gamificación sostenible</h3>
+                        </div>
+                        <p class="text-gray-600 ml-14">Gana puntos y recompensas por visitar lugares menos concurridos, usar transporte público o apoyar negocios locales.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-utensils text-yellow-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Cultura y gastronomía local</h3>
+                        </div>
+                        <p class="text-gray-600 ml-14">Descubre bares, restaurantes y experiencias culturales auténticas que apoyan directamente a la comunidad barcelonesa.</p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Mobile app interface" class="rounded-xl shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white mr-3">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">4.9/5</p>
+                                <p class="text-sm text-gray-500">App Store Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">¿Qué hace la app?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">ExploreBCN ofrece herramientas inteligentes para transformar tu experiencia en Barcelona</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-map text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mapa interactivo</h3>
+                    <p class="text-gray-600 mb-4">Explora lugares alternativos con información en tiempo real sobre afluencia de visitantes.</p>
+                    <div class="bg-gray-100 p-3 rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Map feature" class="rounded-lg w-full h-32 object-cover">
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-medal text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sistema de recompensas</h3>
+                    <p class="text-gray-600 mb-4">Gana puntos por prácticas sostenibles y canjéalos por descuentos en locales colaboradores.</p>
+                    <div class="bg-gray-100 p-3 rounded-lg">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <i class="fas fa-coins text-yellow-500 text-2xl mr-2"></i>
+                                <span class="font-bold">1,250</span>
+                            </div>
+                            <button class="bg-green-500 text-white px-3 py-1 rounded-lg text-sm">Canjear</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tasks text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Retos eco diarios</h3>
+                    <p class="text-gray-600 mb-4">Completa desafíos sostenibles como "Usa el transporte público 3 días seguidos".</p>
+                    <div class="bg-gray-100 p-3 rounded-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-medium">Día 1/3</span>
+                            <span class="text-sm font-bold text-green-500">+150 pts</span>
+                        </div>
+                        <div class="w-full bg-gray-300 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 33%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-language text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multilenguaje</h3>
+                    <p class="text-gray-600 mb-4">Disponible en español, catalán, inglés, francés y alemán para mayor accesibilidad.</p>
+                    <div class="bg-gray-100 p-3 rounded-lg flex justify-around">
+                        <span class="text-sm font-medium">ES</span>
+                        <span class="text-sm font-medium">CAT</span>
+                        <span class="text-sm font-medium">EN</span>
+                        <span class="text-sm font-medium">FR</span>
+                        <span class="text-sm font-medium">DE</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Perfil personalizado</h3>
+                    <p class="text-gray-600 mb-4">Recibe recomendaciones basadas en tus intereses: arte, gastronomía, historia o naturaleza.</p>
+                    <div class="bg-gray-100 p-3 rounded-lg">
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Arte</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Gastronomía</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Historia</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-indigo-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Impacto medible</h3>
+                    <p class="text-gray-600 mb-4">Visualiza cómo tu visita contribuye a distribuir mejor el turismo en Barcelona.</p>
+                    <div class="bg-gray-100 p-3 rounded-lg">
+                        <div class="flex justify-between text-sm">
+                            <div class="text-center">
+                                <p class="font-bold text-indigo-600">5</p>
+                                <p class="text-gray-500">Lugares alternativos</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-bold text-green-600">12kg</p>
+                                <p class="text-gray-500">CO2 ahorrado</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-bold text-yellow-600">€85</p>
+                                <p class="text-gray-500">A locales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Impacto positivo en Barcelona</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Cómo ExploreBCN está transformando el turismo en la ciudad</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1527631746610-b25700a1cd5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Happy locals in Barcelona" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Beneficios para la comunidad local</h3>
+                    <p class="text-gray-600 mb-6">Al redistribuir el flujo turístico, ayudamos a:</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-green-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Revitalizar barrios menos visitados</h4>
+                                <p class="text-gray-600 text-sm">Aumentando los ingresos de pequeños negocios fuera de las rutas turísticas tradicionales.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-green-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Reducir la presión en zonas saturadas</h4>
+                                <p class="text-gray-600 text-sm">Mejorando la calidad de vida de los residentes en áreas tradicionalmente turísticas.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-check text-green-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Preservar la autenticidad cultural</h4>
+                                <p class="text-gray-600 text-sm">Fomentando interacciones más genuinas entre visitantes y residentes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 rounded-2xl p-8 md:p-12">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">15K+</div>
+                        <p class="text-gray-700 font-medium">Usuarios activos</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-green-600 mb-2">350+</div>
+                        <p class="text-gray-700 font-medium">Negocios locales colaboradores</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-yellow-600 mb-2">72%</div>
+                        <p class="text-gray-700 font-medium">Usuarios que repiten visita</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-500 to-green-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para descubrir la Barcelona auténtica?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Descarga ExploreBCN hoy y comienza una experiencia turística más inteligente y sostenible.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fab fa-apple text-2xl mr-3"></i>
+                    <div class="text-left">
+                        <div class="text-xs">Descargar en</div>
+                        <div class="text-lg">App Store</div>
+                    </div>
+                </button>
+                <button class="bg-gray-900 text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition flex items-center justify-center">
+                    <i class="fab fa-google-play text-2xl mr-3"></i>
+                    <div class="text-left">
+                        <div class="text-xs">Descargar en</div>
+                        <div class="text-lg">Google Play</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">EB</div>
+                        <h3 class="text-xl font-bold">Explore<span class="text-green-400">BCN</span></h3>
+                    </div>
+                    <p class="text-gray-400">Transformando el turismo en Barcelona a través de la tecnología y la sostenibilidad.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Enlaces rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#problem" class="text-gray-400 hover:text-white transition">El Problema</a></li>
+                        <li><a href="#solution" class="text-gray-400 hover:text-white transition">Nuestra Solución</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Funcionalidades</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Términos y condiciones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">hola@explorebcn.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">+34 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">Barcelona, España</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 ExploreBCN. Todos los derechos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">ES</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">EN</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">CAT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const navMenu = document.querySelector('nav');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                navMenu.classList.toggle('hidden');
+                navMenu.classList.toggle('flex');
+                navMenu.classList.toggle('flex-col');
+                navMenu.classList.toggle('absolute');
+                navMenu.classList.toggle('top-16');
+                navMenu.classList.toggle('left-0');
+                navMenu.classList.toggle('right-0');
+                navMenu.classList.toggle('bg-white');
+                navMenu.classList.toggle('p-4');
+                navMenu.classList.toggle('shadow-md');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!navMenu.classList.contains('hidden')) {
+                        navMenu.classList.add('hidden');
+                        navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'p-4', 'shadow-md');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
